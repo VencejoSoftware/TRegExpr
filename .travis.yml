@@ -1,0 +1,7 @@
+sudo: required
+dist: trusty
+install: ./.travis-lazarus/.travis.install.py
+
+script:
+  - lazbuild $LAZ_OPT test/testregexpr.lpi             # Build project
+  - $LAZ_ENV test/testregexpr --all --format=plain # Run testsuite
